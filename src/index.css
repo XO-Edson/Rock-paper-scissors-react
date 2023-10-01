@@ -1,0 +1,150 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+
+  background: radial-gradient(circle, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  color: white;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.scoreCounter {
+  width: 550px;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.moves {
+  font-weight: bold;
+}
+
+.scoreCount {
+  background-color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+  color: black;
+  text-align: center;
+}
+
+.rock,
+.paper,
+.scissors {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+
+  padding: 2rem;
+  display: grid;
+  place-content: center;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+article {
+  display: flex;
+  gap: 2rem;
+}
+
+.rock {
+  border: 0.8rem solid red;
+}
+
+.paper {
+  border: 0.8rem solid blue;
+}
+.scissors {
+  border: 0.8rem solid yellow;
+}
+footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+button {
+  padding: 5px 20px;
+  color: white;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Rules page */
+
+.rulesBackground {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  visibility: hidden;
+}
+
+.rules {
+  width: 350px;
+  filter: grayscale(100%);
+  padding: 1rem;
+  background-color: white;
+  border-radius: 10px;
+  color: black;
+}
+
+.rulesMenu {
+  display: flex;
+  justify-content: space-between;
+}
+.cross {
+  width: 50px;
+  height: 50px;
+
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+.bar {
+  margin: auto;
+  background-color: black;
+  width: 1.5rem;
+  height: 3px;
+}
+
+.bar:first-child {
+  transform: rotate(45deg);
+  margin-top: -5px;
+}
+.bar:last-child {
+  transform: rotate(-45deg);
+  margin-top: -5px;
+}
+
+.active {
+  visibility: visible;
+}
