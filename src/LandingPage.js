@@ -1,31 +1,28 @@
 import React from "react";
+import { Link, useParams } from "react-router-dom";
 
-export const LandingPage = ({ rulesToggle }) => {
+export const LandingPage = ({ move, startGame, selectedMove }) => {
   return (
     <>
-      <header>
-        <div className="scoreCounter">
-          <div className="moves">
-            <p>ROCK</p>
-            <p>PAPER</p>
-            <p>SCISSORS</p>
-          </div>
-          <div className="scoreCount">
-            <p>SCORE</p>
-            <p>12</p>
-          </div>
-        </div>
-      </header>
       <main>
         <article>
-          <div className="rock">rock</div>
-          <div className="paper">paper</div>
+          <Link to={`/${selectedMove}`}>
+            <div className="rock" onClick={startGame}>
+              {move[0]}
+            </div>
+          </Link>
+          <Link to={`/${selectedMove}`}>
+            <div className="paper" onClick={startGame}>
+              {move[1]}
+            </div>
+          </Link>
         </article>
-        <div className="scissors">scissors</div>
+        <Link to={`/${selectedMove}`}>
+          <div className="scissors" onClick={startGame}>
+            {move[2]}
+          </div>
+        </Link>
       </main>
-      <footer>
-        <button onClick={rulesToggle}>RULES</button>
-      </footer>
     </>
   );
 };
