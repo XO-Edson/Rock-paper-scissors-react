@@ -2,9 +2,10 @@ import { LandingPage } from "./LandingPage";
 import { Rules } from "./Rules";
 import { useState } from "react";
 import { Play } from "./Play";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { ScoreHeader } from "./ScoreHeader";
 import { Footer } from "./Footer";
+import { VersusSection } from "./VersusSection";
 
 function App() {
   const [active, setActive] = useState(false);
@@ -47,6 +48,7 @@ function App() {
           element={<Play selectedMove={selectedMove} />}
         />
       </Routes>
+
       <Rules active={active} rulesToggle={rulesToggle} />
       <Footer rulesToggle={rulesToggle} />
     </div>

@@ -52,7 +52,8 @@ header {
 
 .rock,
 .paper,
-.scissors {
+.scissors,
+.housePick {
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -73,6 +74,9 @@ main {
 article {
   display: flex;
   gap: 2rem;
+}
+a {
+  text-decoration: none;
 }
 
 .rock {
@@ -151,4 +155,23 @@ button {
 
 .active {
   visibility: visible;
+}
+
+/* VERSUS */
+
+.versus {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.playerContainer,
+.houseContainer {
+  text-align: center;
+  font-weight: bold;
+}
+
+.housePick {
+  border: 0.8rem solid green;
 }
