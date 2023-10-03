@@ -191,7 +191,7 @@ button {
 /* VERSUS */
 
 .versus {
-  width: 100%;
+  width: 550px;
   display: flex;
   justify-content: space-around;
   align-items: center;

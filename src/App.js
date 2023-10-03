@@ -1,6 +1,6 @@
 import { LandingPage } from "./LandingPage";
 import { Rules } from "./Rules";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Play } from "./Play";
 import { Routes, Route } from "react-router-dom";
 import { ScoreHeader } from "./ScoreHeader";
@@ -52,6 +52,18 @@ function App() {
             <Play
               selectedMove={selectedMove}
               clearSelectedMove={clearSelectedMove}
+            />
+          }
+        />
+
+        <Route
+          path="*"
+          element={
+            <LandingPage
+              rulesToggle={rulesToggle}
+              move={move}
+              startGame={startGame}
+              selectedMove={selectedMove}
             />
           }
         />
