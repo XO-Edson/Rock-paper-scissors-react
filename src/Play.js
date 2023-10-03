@@ -1,12 +1,15 @@
 import React from "react";
 import { VersusSection } from "./VersusSection";
 
-export const Play = ({ selectedMove }) => {
+export const Play = ({ selectedMove, clearSelectedMove }) => {
   return (
     <main>
       {selectedMove ? (
         <section className="versus">
-          <VersusSection selectedMove={selectedMove} />
+          <VersusSection
+            selectedMove={selectedMove}
+            clearSelectedMove={clearSelectedMove}
+          />
         </section>
       ) : (
         console.log("error")

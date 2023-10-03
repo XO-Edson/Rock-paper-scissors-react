@@ -1,16 +1,19 @@
 import { LandingPage } from "./LandingPage";
 import { Rules } from "./Rules";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Play } from "./Play";
 import { Routes, Route } from "react-router-dom";
 import { ScoreHeader } from "./ScoreHeader";
 import { Footer } from "./Footer";
-import { VersusSection } from "./VersusSection";
 
 function App() {
-  const [active, setActive] = useState(false);
+  const [rules, setRules] = useState(false);
   const [move, setMove] = useState(["rock", "paper", "scissors"]);
   const [selectedMove, setSelectedMove] = useState("");
+
+  const clearSelectedMove = () => {
+    setSelectedMove("");
+  };
 
   const startGame = (e) => {
     if (e.target.className === move[0]) {
@@ -25,7 +28,7 @@ function App() {
   };
 
   function rulesToggle() {
-    setActive((prevState) => !prevState);
+    setRules((prevState) => !prevState);
   }
 
   return (
@@ -45,11 +48,16 @@ function App() {
         />
         <Route
           path={`/${selectedMove}`}
-          element={<Play selectedMove={selectedMove} />}
+          element={
+            <Play
+              selectedMove={selectedMove}
+              clearSelectedMove={clearSelectedMove}
+            />
+          }
         />
       </Routes>
 
-      <Rules active={active} rulesToggle={rulesToggle} />
+      <Rules rules={rules} rulesToggle={rulesToggle} />
       <Footer rulesToggle={rulesToggle} />
     </div>
   );

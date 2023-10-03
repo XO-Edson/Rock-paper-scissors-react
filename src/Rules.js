@@ -1,8 +1,8 @@
 import React from "react";
 
-export const Rules = ({ active, rulesToggle }) => {
+export const Rules = ({ rules, rulesToggle }) => {
   return (
-    <div className={`${active ? "active" : "rulesBackground"} rulesBackground`}>
+    <div className={`${rules ? "active" : "rulesBackground"} rulesBackground`}>
       <div className="rules">
         <div className="rulesMenu">
           <h1>Rules</h1>

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+
 * {
   padding: 0;
   margin: 0;
@@ -9,6 +11,7 @@ body {
 
   background: radial-gradient(circle, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
   color: white;
+  font-family: "Barlow Semi Condensed", sans-serif;
 }
 
 #root {
@@ -27,6 +30,7 @@ header {
   display: flex;
   justify-content: center;
   padding: 1rem;
+  font-weight: 700;
 }
 
 .scoreCounter {
@@ -34,7 +38,7 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-  border: 1px solid white;
+  border: 1px solid hsl(217, 16%, 45%);
   border-radius: 5px;
 }
 
@@ -54,15 +58,16 @@ header {
 .paper,
 .scissors,
 .housePick {
-  width: 150px;
-  height: 150px;
+  position: relative;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
 
   padding: 2rem;
   display: grid;
   place-content: center;
   background-color: white;
-  color: black;
+  color: hsl(229, 25%, 31%);
   cursor: pointer;
 }
 
@@ -73,21 +78,47 @@ main {
 }
 article {
   display: flex;
-  gap: 2rem;
+  gap: 4rem;
+  margin-bottom: 3rem;
 }
+
 a {
   text-decoration: none;
 }
 
-.rock {
-  border: 0.8rem solid red;
+.rock:after {
+  content: "";
+  position: absolute;
+  background: radial-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  z-index: -1;
+  top: -15px;
+  left: -15px;
 }
 
-.paper {
-  border: 0.8rem solid blue;
+.paper::after {
+  content: "";
+  position: absolute;
+  background: radial-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  z-index: -1;
+  top: -15px;
+  left: -15px;
 }
-.scissors {
-  border: 0.8rem solid yellow;
+.scissors:after {
+  content: "";
+  position: absolute;
+  background: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  z-index: -1;
+  top: -15px;
+  left: -15px;
 }
 footer {
   display: flex;
@@ -168,10 +199,38 @@ button {
 
 .playerContainer,
 .houseContainer {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-weight: bold;
+  width: 100%;
+}
+
+.playerContainer p,
+.houseContainer p {
+  margin-bottom: 2rem;
 }
 
 .housePick {
-  border: 0.8rem solid green;
+  position: relative;
+}
+
+.housePick::after {
+  content: "";
+  position: absolute;
+  background: radial-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  z-index: -1;
+  top: -15px;
+  left: -15px;
+}
+
+.gameStatus {
+  text-align: center;
+}
+
+button {
+  white-space: nowrap;
 }

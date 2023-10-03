@@ -11,12 +11,14 @@ export const LandingPage = ({ move, startGame, selectedMove }) => {
               {move[0]}
             </div>
           </Link>
+
           <Link to={`/${selectedMove}`}>
             <div className="paper" onClick={startGame}>
               {move[1]}
             </div>
           </Link>
         </article>
+
         <Link to={`/${selectedMove}`}>
           <div className="scissors" onClick={startGame}>
             {move[2]}
