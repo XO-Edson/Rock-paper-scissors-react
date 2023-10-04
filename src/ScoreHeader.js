@@ -1,6 +1,6 @@
 import React from "react";
 
-export const ScoreHeader = () => {
+export const ScoreHeader = ({ scoreCount }) => {
   return (
     <header>
       <div className="scoreCounter">
@@ -11,7 +11,7 @@ export const ScoreHeader = () => {
         </div>
         <div className="scoreCount">
           <p>SCORE</p>
-          <p>12</p>
+          <p>{scoreCount}</p>
         </div>
       </div>
     </header>

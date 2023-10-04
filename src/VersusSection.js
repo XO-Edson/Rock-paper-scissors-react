@@ -1,7 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const VersusSection = ({ selectedMove, clearSelectedMove }) => {
+export const VersusSection = ({
+  selectedMove,
+  clearSelectedMove,
+  house,
+  gameStatus,
+  move,
+}) => {
   return (
     <>
       {selectedMove ? (
@@ -11,14 +17,22 @@ export const VersusSection = ({ selectedMove, clearSelectedMove }) => {
             <div className={selectedMove}>{selectedMove}</div>
           </div>
           <div className="gameStatus">
-            <p>YOU WIN</p>
+            <p>
+              {selectedMove === house.name
+                ? "TIE"
+                : gameStatus
+                ? "YOU WIN"
+                : "YOU LOSE"}
+            </p>
             <Link to={"/"}>
               <button onClick={clearSelectedMove}>PLAY AGAIN</button>
             </Link>
           </div>
           <div className="houseContainer">
             <p>THE HOUSE PICKED</p>
-            <div className="housePick">random</div>
+            <div className={house.name}>
+              <img src={house.icon} alt="icon" />
+            </div>
           </div>
         </>
       ) : (
