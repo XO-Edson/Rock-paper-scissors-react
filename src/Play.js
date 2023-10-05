@@ -9,7 +9,7 @@ export const Play = ({
 }) => {
   return (
     <main>
-      {selectedMove ? (
+      {selectedMove.name && (
         <section className="versus">
           <VersusSection
             selectedMove={selectedMove}
@@ -18,8 +18,6 @@ export const Play = ({
             gameStatus={gameStatus}
           />
         </section>
-      ) : (
-        console.log("error")
       )}
     </main>
   );

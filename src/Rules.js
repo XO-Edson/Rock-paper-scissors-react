@@ -1,4 +1,6 @@
 import React from "react";
+import RulesImage from "./images/image-rules.svg";
+import CloseIcon from "./images/icon-close.svg";
 
 export const Rules = ({ rules, rulesToggle }) => {
   return (
@@ -7,17 +9,15 @@ export const Rules = ({ rules, rulesToggle }) => {
         <div className="rulesMenu">
           <h1>Rules</h1>
           <div className="cross" onClick={rulesToggle}>
-            <div className="bar"></div>
-            <div className="bar"></div>
+            <img src={CloseIcon} alt="close icon" />
           </div>
         </div>
 
+        <p>Double-click to pick move</p>
         <main>
           <article>
-            <div className="rock">rock</div>
-            <div className="paper">paper</div>
+            <img src={RulesImage} alt="rules" />
           </article>
-          <div className="scissors">scissors</div>
         </main>
       </div>
     </div>

@@ -6,7 +6,6 @@ export const VersusSection = ({
   clearSelectedMove,
   house,
   gameStatus,
-  move,
 }) => {
   return (
     <>
@@ -14,11 +13,13 @@ export const VersusSection = ({
         <>
           <div className="playerContainer">
             <p>YOU PICKED</p>
-            <div className={selectedMove}>{selectedMove}</div>
+            <div className={selectedMove.name}>
+              <img src={selectedMove.icon} alt="icon" />
+            </div>
           </div>
           <div className="gameStatus">
             <p>
-              {selectedMove === house.name
+              {selectedMove.name === house.name
                 ? "TIE"
                 : gameStatus
                 ? "YOU WIN"

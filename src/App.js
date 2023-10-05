@@ -25,19 +25,20 @@ function App() {
       icon: scissorsIcon,
     },
   ]);
-  const [selectedMove, setSelectedMove] = useState("");
+  const [selectedMove, setSelectedMove] = useState([]);
   const [house, setHouse] = useState("");
   const [gameStatus, setGameStatus] = useState(false);
   const [scoreCount, setScoreCount] = useState(0);
+  //console.log(selectedMove);
 
   /* Starts game */
   const startGame = (e) => {
-    if (e.target.className === move[0].name) {
-      setSelectedMove(move[0].name);
-    } else if (e.target.className === move[1].name) {
-      setSelectedMove(move[1].name);
+    if (e.target.parentNode.className === move[0].name) {
+      setSelectedMove(move[0]);
+    } else if (e.target.parentNode.className === move[1].name) {
+      setSelectedMove(move[1]);
     } else {
-      setSelectedMove(move[2].name);
+      setSelectedMove(move[2]);
     }
     handleWin(); /* The "handleWin" function is executed immediately a move is selected */
     return selectedMove;
@@ -45,21 +46,13 @@ function App() {
 
   /* The handle win function to check for wins */
   const handleWin = () => {
-    if (selectedMove === house) {
-      console.log("Tie");
-      return gameStatus;
-    }
-    if (selectedMove === "") {
-      return undefined;
-    }
-
     if (
-      (selectedMove === "rock" && house === "scissors") ||
-      (selectedMove === "scissors" && house === "paper") ||
-      (selectedMove === "paper" && house === "rock")
+      (selectedMove.name === "rock" && house.name === "scissors") ||
+      (selectedMove.name === "scissors" && house.name === "paper") ||
+      (selectedMove.name === "paper" && house.name === "rock")
     ) {
-      setScoreCount((prevScore) => prevScore + 1); /* Count increases */
       setGameStatus(true); /*Game status changes */
+      setScoreCount((prevScore) => prevScore + 1); /* Count increases */
       return console.log("Win!!");
     } else {
       setGameStatus(false);
@@ -101,7 +94,7 @@ function App() {
         />
         {/* This page is where the game is played */}
         <Route
-          path={`/${selectedMove}`}
+          path={`/${selectedMove.name}`}
           element={
             <Play
               selectedMove={selectedMove}

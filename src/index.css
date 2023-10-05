@@ -50,8 +50,12 @@ header {
   background-color: white;
   padding: 0.5rem 1.5rem;
   border-radius: 5px;
-  color: black;
+  color: hsl(217, 16%, 45%);
   text-align: center;
+}
+
+.score {
+  font-size: 3.5rem;
 }
 
 .rock,
@@ -156,32 +160,15 @@ button {
   color: black;
 }
 
+.rules main {
+  margin-top: 1rem;
+}
+
 .rulesMenu {
   display: flex;
   justify-content: space-between;
-}
-.cross {
-  width: 50px;
-  height: 50px;
-
-  display: grid;
-  place-content: center;
-  cursor: pointer;
-}
-.bar {
-  margin: auto;
-  background-color: black;
-  width: 1.5rem;
-  height: 3px;
-}
-
-.bar:first-child {
-  transform: rotate(45deg);
-  margin-top: -5px;
-}
-.bar:last-child {
-  transform: rotate(-45deg);
-  margin-top: -5px;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .active {
