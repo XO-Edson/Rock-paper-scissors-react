@@ -40,7 +40,7 @@ function App() {
     } else {
       setSelectedMove(move[2]);
     }
-    //handleWin(); /* The "handleWin" function is executed immediately a move is selected */
+
     return selectedMove;
   };
 
