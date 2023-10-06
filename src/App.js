@@ -26,7 +26,7 @@ function App() {
     },
   ]);
   const [selectedMove, setSelectedMove] = useState([]);
-  const [house, setHouse] = useState("");
+  const [house, setHouse] = useState([]);
   const [gameStatus, setGameStatus] = useState(false);
   const [scoreCount, setScoreCount] = useState(0);
   //console.log(selectedMove);
@@ -40,7 +40,7 @@ function App() {
     } else {
       setSelectedMove(move[2]);
     }
-    handleWin(); /* The "handleWin" function is executed immediately a move is selected */
+    //handleWin(); /* The "handleWin" function is executed immediately a move is selected */
     return selectedMove;
   };
 
@@ -56,18 +56,29 @@ function App() {
       return console.log("Win!!");
     } else {
       setGameStatus(false);
-      return console.log("Loser!!!!!");
     }
   };
 
   /* To track whenever changes are made on any selected moves */
   useEffect(() => {
-    setHouse(move[Math.floor(Math.random() * move.length)]);
+    const timeOutId = setTimeout(() => {
+      setHouse(move[Math.floor(Math.random() * move.length)]);
+    }, 1000);
+
+    return () => {
+      clearTimeout(timeOutId);
+      setHouse([]);
+    };
   }, [selectedMove, move]);
+
+  /* When the app is mounted on innitialization the "house" will be set by default to a random move.The useEffect below tracks wins once the "house" begins to change afterwards */
+  useEffect(() => {
+    handleWin();
+  }, [house]);
 
   /* Handles clearing of "selectedMove" whenever "PLAY AGAIN" is clicked*/
   const clearSelectedMove = () => {
-    setSelectedMove("");
+    setSelectedMove([]);
   };
 
   /* Rules button function */

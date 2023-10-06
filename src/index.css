@@ -78,7 +78,9 @@ header {
 main {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   align-items: center;
+  justify-content: center;
 }
 article {
   display: flex;
@@ -197,22 +199,6 @@ button {
 .houseContainer p {
   margin-bottom: 2rem;
 }
-
-/* .housePick {
-  position: relative;
-}
-
-.housePick::after {
-  content: "";
-  position: absolute;
-  background: radial-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  z-index: -1;
-  top: -15px;
-  left: -15px;
-} */
 
 .gameStatus {
   display: grid;
