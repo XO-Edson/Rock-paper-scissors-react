@@ -71,7 +71,7 @@ function App() {
     };
   }, [selectedMove, move]);
 
-  /* When the app is mounted on innitialization the "house" will be set by default to a random move.The useEffect below tracks wins once the "house" begins to change afterwards */
+  /* When the app is mounted on initialization the "house" will be set by default to a random move.The useEffect below tracks wins once the "house" begins to change afterwards */
   useEffect(() => {
     handleWin();
   }, [house]);

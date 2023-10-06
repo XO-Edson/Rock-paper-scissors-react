@@ -5,7 +5,7 @@ export const ScoreHeader = ({ scoreCount }) => {
   return (
     <header>
       <div className="scoreCounter">
-        <div className="moves">
+        <div>
           <img src={Logo} alt="logo" />
         </div>
         <div className="scoreCount">
