@@ -1,10 +1,10 @@
 import { LandingPage } from "./LandingPage";
 import { Rules } from "./Rules";
+import { Footer } from "./Footer";
 
 import { Play } from "./Play";
 import { Routes, Route } from "react-router-dom";
 import { ScoreHeader } from "./ScoreHeader";
-import { Footer } from "./Footer";
 
 import { DataProvider } from "./Context/DataContext";
 import { useState } from "react";
@@ -30,7 +30,6 @@ function App() {
 
           <Route path="*" element={<LandingPage />} />
         </Routes>
-
         <Rules />
         <Footer />
       </div>

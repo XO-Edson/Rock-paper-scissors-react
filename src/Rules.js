@@ -5,6 +5,7 @@ import GameData from "./Context/DataContext";
 
 export const Rules = () => {
   const { rules, rulesToggle } = useContext(GameData);
+
   return (
     <div className={`${rules ? "active" : "rulesBackground"} rulesBackground`}>
       <div className="rules">

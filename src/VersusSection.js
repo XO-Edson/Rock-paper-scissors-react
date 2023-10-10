@@ -1,15 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import GameData from "./Context/DataContext";
 
-export const VersusSection = ({
-  selectedMove,
-  clearSelectedMove,
-  house,
-  gameStatus,
-}) => {
+export const VersusSection = () => {
+  const { selectedMove, clearSelectedMove, house, gameStatus } =
+    useContext(GameData);
+
   return (
     <>
-      {selectedMove ? (
+      {selectedMove && (
         <>
           <div className="playerContainer">
             <p>YOU PICKED</p>
@@ -42,8 +41,6 @@ export const VersusSection = ({
             )}
           </div>
         </>
-      ) : (
-        console.log("Debugging")
       )}
     </>
   );
