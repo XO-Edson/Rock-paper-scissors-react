@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import RulesImage from "./images/image-rules.svg";
 import CloseIcon from "./images/icon-close.svg";
+import GameData from "./Context/DataContext";
 
-export const Rules = ({ rules, rulesToggle }) => {
+export const Rules = () => {
+  const { rules, rulesToggle } = useContext(GameData);
   return (
     <div className={`${rules ? "active" : "rulesBackground"} rulesBackground`}>
       <div className="rules">

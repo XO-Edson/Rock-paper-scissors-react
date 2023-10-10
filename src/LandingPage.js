@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import GameData from "./Context/DataContext";
 
-export const LandingPage = ({ move, startGame, selectedMove }) => {
+export const LandingPage = () => {
+  const { move, startGame, selectedMove } = useContext(GameData);
   return (
     <>
       <main>

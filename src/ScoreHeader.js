@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import GameData from "./Context/DataContext";
 import Logo from "./images/logo.svg";
 
-export const ScoreHeader = ({ scoreCount }) => {
+export const ScoreHeader = () => {
+  const { scoreCount } = useContext(GameData);
+
   return (
     <header>
       <div className="scoreCounter">

@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { VersusSection } from "./VersusSection";
+import GameData from "./Context/DataContext";
 
-export const Play = ({
-  selectedMove,
-  clearSelectedMove,
-  house,
-  gameStatus,
-}) => {
+export const Play = () => {
+  const { selectedMove, clearSelectedMove, house, gameStatus } =
+    useContext(GameData);
+
   return (
     <main>
       {selectedMove.name && (
